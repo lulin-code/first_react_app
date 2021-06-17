@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+/*
+ * @Author: your name
+ * @Date: 2021-06-16 19:25:58
+ * @LastEditTime: 2021-06-17 14:25:51
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /first_react_app/src/App.js
+ */
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// 创建“外壳”组件APP
+import React,{Component} from 'react'
+import Hello from './components/Hello/Hello.jsx'
+import Welocme from './components/Welcome/Welcome.jsx'
+export default class APP extends Component{
+  render() {
+    return(
+      <div>
+        <Hello/>
+        <Welocme/>
+      </div>
+    )
+  }
 }
 
-export default App;
