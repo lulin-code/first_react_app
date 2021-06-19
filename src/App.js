@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-06-16 19:25:58
- * @LastEditTime: 2021-06-19 09:39:12
+ * @LastEditTime: 2021-06-19 10:20:37
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /first_react_app/src/App.js
@@ -40,12 +40,20 @@ export default class APP extends Component {
     })
     this.setState({ todos: newTodos })
   }
+  // 用于删除一个todo对象
+  deleteTodo = (id)=> {
+    const {todos} = this.state;
+    const newTodos = todos.filter((todoObj)=> {
+      return todoObj.id !== id
+    })
+    this.setState({todos: newTodos})
+  }
   render() {
     const { todos } = this.state
     return (
       <div>
         <Header addTodo={this.addTodo} />
-        <List todos={todos} updateTodo={this.updateTodo} />
+        <List todos={todos} updateTodo={this.updateTodo} deleteTodo={this.deleteTodo} />
         <Footer />
       </div>
     )
