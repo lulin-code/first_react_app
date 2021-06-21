@@ -6,11 +6,14 @@ import './index.css';
 
 export default class List extends Component {
   render() {
-    const {users} = this.props
+    const {users,isFirst,isLoading,err} = this.props
     return (
       <div className='row'>
         {
-        users.map((userObj)=> {
+          isFirst ? <h2>欢迎使用,请输入关键字</h2> :
+          isLoading ? <h2>加载中。。。。。。</h2> :
+          err ? <h2 style={{color:'red'}}>err</h2> :
+          users.map((userObj)=> {
           return(
             <div key={userObj.id} className="card">
 								<a  href={userObj.html_url} target="_blank">
