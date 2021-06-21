@@ -2,11 +2,24 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react'
+import PubSub from 'pubsub-js'
 import './index.css';
 
 export default class List extends Component {
+   // 初始化状态
+  state = { 
+    users: [], 
+    isFirst:true,  //是否为第一次打开页面
+    isLoading:false,  //是否处于加载中
+    err:''  //存储请求相关的错误信息
+   }
+  componentDidMount(){
+    PubSub.subscribe(`search`,(_,data)=> {
+      this.setState(data)
+    })
+  }
   render() {
-    const {users,isFirst,isLoading,err} = this.props
+    const {users,isFirst,isLoading,err} = this.state
     return (
       <div className='row'>
         {
