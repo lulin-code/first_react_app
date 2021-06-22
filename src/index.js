@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-06-16 19:25:58
- * @LastEditTime: 2021-06-22 14:47:13
+ * @LastEditTime: 2021-06-22 15:42:17
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /first_react_app/src/index.js
@@ -19,7 +19,7 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
-    </BrowserRouter >,
+    </BrowserRouter >
   </React.StrictMode>,
   document.getElementById('root')
 );
