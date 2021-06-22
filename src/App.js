@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-06-16 19:25:58
- * @LastEditTime: 2021-06-22 16:47:54
+ * @LastEditTime: 2021-06-22 17:26:39
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /first_react_app/src/App.js
@@ -9,7 +9,7 @@
 
 // 创建“外壳”组件APP
 import React,{Component} from 'react'
-import {Route,Switch } from 'react-router-dom'
+import {Route,Switch,Redirect } from 'react-router-dom'
 import About from './pages/About'
 import Home from './pages/Home'
 import Header from './components/Header'
@@ -43,6 +43,7 @@ export default class APP extends Component{
                 <Switch>
                   <Route path="/home" component={Home} />
                   <Route path="/about" component={About} />
+                  <Redirect to="/about"/> 
                 </Switch>
               </div>
             </div>
