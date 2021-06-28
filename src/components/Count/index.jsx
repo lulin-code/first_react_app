@@ -29,7 +29,7 @@ export default class Count extends Component {
   //异步加
   incrementAsync = ()=> {
     const {value} = this.selectNumber
-      store.dispatch(createIncrementAsyncAction(value * 1))
+      store.dispatch(createIncrementAsyncAction(value * 1,500))
   } 
   render() {
     return (
