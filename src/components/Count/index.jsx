@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
 import store from '../../redux/store'
+import { createIncrementAction,createDecrementAction } from '../../redux/count_action'
 
 export default class Count extends Component {
   // 加法
   increment = ()=> {
     const {value} = this.selectNumber
-    store.dispatch({type:'increment',data:parseInt(value)})
+    store.dispatch(createIncrementAction(parseInt(value)))
   }
   // 减法
   decrement = ()=> {
     const {value} = this.selectNumber
-    store.dispatch({type:'decrement',data:parseInt(value)})
+    store.dispatch(createDecrementAction(parseInt(value)))
   }
   // 奇数加
   incrementIfOdd = ()=> {
@@ -18,7 +19,7 @@ export default class Count extends Component {
     const count = store.getState()
     console.log(count)
     if (count % 2 !== 0) {
-      store.dispatch({type:'increment',data:value *1})
+      store.dispatch(createIncrementAction(parseInt(value)))
     }
   }
 
@@ -26,7 +27,7 @@ export default class Count extends Component {
   incrementAsync = ()=> {
     const {value} = this.selectNumber
     setTimeout(() => {
-      store.dispatch({type:'increment',data:parseInt(value)})
+      store.dispatch(createIncrementAction(value * 1))
     }, 500);
   } 
   render() {
