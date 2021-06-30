@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-06-16 19:25:58
- * @LastEditTime: 2021-06-25 17:31:49
+ * @LastEditTime: 2021-06-30 17:58:57
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /first_react_app/src/index.js
@@ -10,19 +10,16 @@
 import React from 'react';
 // 引入reactDOM
 import ReactDOM from 'react-dom';
-// 引入store
-import store from './redux/store'
+import { Provider } from 'react-redux'
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import store from './redux/store';
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <App />,
+  </Provider>,
   document.getElementById('root')
 );
-
-store.subscribe(()=>{
-  ReactDOM.render(<App />, document.getElementById('root'))
-})
 reportWebVitals();
