@@ -17,6 +17,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store';
 ReactDOM.render(
+  // 此处需要用Provider包裹APP，目的是让APP所有的后代容器组件都能接收到store
   <Provider store={store}>
     <App />,
   </Provider>,

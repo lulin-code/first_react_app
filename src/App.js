@@ -9,8 +9,8 @@
 
 // 创建“外壳”组件APP
 import React,{Component} from 'react'
-import Count from './containers/Count'
-import Perspn from './containers/Person'
+import Count from './containers/Count' //引入的Count的容器组件
+import Person from './containers/Person' //引入的Person的容器组件
 
 
 export default class APP extends Component{
@@ -19,7 +19,7 @@ export default class APP extends Component{
       <div>
         <Count/>
         <hr/>
-        <Perspn/>
+        <Person/>
       </div>
     )
   }
