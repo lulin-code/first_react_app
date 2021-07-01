@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import React, { Component } from 'react'
 import { createIncrementAction,
          createIncrementAsyncAction,
-         createDecrementAction } from '../../redux/count_action'
+         createDecrementAction } from '../../redux/actions/count.js'
 
 class Count extends Component {
   // 加法
@@ -35,7 +35,9 @@ class Count extends Component {
   render() {
     return (
       <div>
-        <h1>当前求和为：{this.props.count}</h1>
+        <h2>我是Count组件,下方组件总人数为:{this.props.renshu}</h2>
+        <h2>当前求和为：{this.props.count}</h2>
+   
         <br />
         <select ref={c => this.selectNumber = c}>
           <option value="1">1</option>
@@ -55,7 +57,8 @@ class Count extends Component {
 
 // 使用connect()()创建并暴露一个Count的容器组件
 export default connect(
-  state =>  ({count: state}),
+  state =>  ({count: state.he,
+  renshu:state.rens.length}),
   { jia:createIncrementAction,
     jian:createDecrementAction,
     jiaAsync: createIncrementAsyncAction}

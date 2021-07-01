@@ -2,13 +2,13 @@
 /*
  * @Author: your name
  * @Date: 2021-06-25 11:19:05
- * @LastEditTime: 2021-06-28 11:20:12
+ * @LastEditTime: 2021-07-01 14:11:54
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: /first_react_app/src/redux/count_reducer.js
+ * @FilePath: /first_react_app/src/redux/count.js
  */
 
-import { INCREMENT,DECREMENT } from './constant'
+import { INCREMENT,DECREMENT } from '../constant'
   // 1.该文件是用于创建一个为Count组件服务的reducer，reducer的本质就是一个函数
   // 2.reducer函数会接到两个参数，分别为：之前的状态(preState)，动作对象(action)
 
