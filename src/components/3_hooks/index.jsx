@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-undef */
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 
 // 类组件
 // export default class Demo extends Component {
@@ -21,11 +22,22 @@ import React, { Component } from 'react'
 function Demo() {
   const [count,setCount] = React.useState(0)
   const [name,setName] = React.useState('JIKE')
+  React.useEffect(()=>{
+  let time = setInterval(() => {
+      setCount(count => count + 1)
+    }, 1000);
+    return ()=> {
+      clearTimeout(time)
+    }
+  },[])
   const add = () => {
     setCount(count + 1)
   }
   const changeName =()=> {
     setName('make')
+  }
+  const unmount = ()=> {
+    ReactDOM.unmountComponentAtNode(document.getElementById('root'))
   }
   return(
      <div>
@@ -33,6 +45,7 @@ function Demo() {
       <h2>我的名字是{name}</h2>
 			<button onClick={add}>点我+1</button>
       <button onClick={changeName}>点我改名</button>
+      <button onClick={unmount}>卸载组件</button>
      </div>
   )
 }
