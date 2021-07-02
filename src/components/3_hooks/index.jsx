@@ -22,6 +22,7 @@ import ReactDOM from 'react-dom'
 function Demo() {
   const [count,setCount] = React.useState(0)
   const [name,setName] = React.useState('JIKE')
+  const myRef = React.useRef()
   React.useEffect(()=>{
   let time = setInterval(() => {
       setCount(count => count + 1)
@@ -39,13 +40,18 @@ function Demo() {
   const unmount = ()=> {
     ReactDOM.unmountComponentAtNode(document.getElementById('root'))
   }
+  const show = ()=> {
+    alert(myRef.current.value)
+  }
   return(
      <div>
       <h2>当前求和为{count}</h2>
       <h2>我的名字是{name}</h2>
+      <input type="text" ref={myRef}/>
 			<button onClick={add}>点我+1</button>
       <button onClick={changeName}>点我改名</button>
       <button onClick={unmount}>卸载组件</button>
+      <button onClick={show}>点我提示数据</button>
      </div>
   )
 }
